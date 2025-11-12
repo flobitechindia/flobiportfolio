@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/f473f8f513adc1b0d96dd1e480ee120c/5e0bf499-3a75-44f3-a577-9a759a65d50d/318e564d.html?utm_source=perplexity -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOBI TECH INDIA - Portfolio</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-bg-light: rgba(248, 250, 252, 1);
+            --color-surface-light: rgba(255, 255, 255, 1);
+            --color-text-dark: rgba(26, 35, 50, 1);
+            --color-text-medium: rgba(71, 85, 105, 1);
+            --color-text-light: rgba(120, 135, 155, 1);
+            --color-border-light: rgba(200, 210, 225, 1);
+            
+            --flobi-gold: #fccf00;
+            --flobi-gold-light: #ffde1a;
+            --flobi-gold-dark: #d4a700;
+            --flobi-navy: #1a365d;
+            --flobi-sky-blue: #0070C9;
+            
+            --font-family-base: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            --font-size-xs: 12px;
+            --font-size-sm: 13px;
+            --font-size-base: 15px;
+            --font-size-lg: 17px;
+            --font-size-xl: 19px;
+            --font-size-2xl: 22px;
+            --font-size-3xl: 28px;
+            --font-size-4xl: 36px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background: var(--color-bg-light);
+            color: var(--color-text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .portfolio-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s var(--ease-standard);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-32);
+            overflow-y: auto;
+            background: var(--color-surface-light);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: var(--space-24);
+        }
+
+        .logo-small {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: var(--space-16);
+        }
+
+        /* Slide 1 - Company Info */
+        .slide-1 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(248, 250, 252, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .company-name {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--flobi-navy);
+            margin-bottom: var(--space-8);
+        }
+
+        .tagline {
+            font-size: var(--font-size-2xl);
+            color: var(--flobi-sky-blue);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-32);
+        }
+
+        .description {
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+            max-width: 900px;
+            margin-bottom: var(--space-32);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-16);
+            justify-content: center;
+            margin-top: var(--space-32);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            font-size: var(--font-size-base);
+            color: var(--color-text-dark);
+            padding: var(--space-12) var(--space-16);
+            background: linear-gradient(135deg, rgba(252, 207, 0, 0.1) 0%, rgba(0, 112, 201, 0.05) 100%);
+            border-radius: var(--radius-base);
+            border-left: 4px solid var(--flobi-gold);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .contact-icon {
+            font-size: 18px;
+        }
+
+        /* Slide Header */
+        .slide-header {
+            padding: var(--space-20);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-32);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .slide-header h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: white;
+            margin: 0;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            gap: var(--space-32);
+            flex: 1;
+        }
+
+        .two-col {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .content-section {
+            background: var(--color-surface-light);
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            transition: all 0.3s var(--ease-standard);
+        }
+        
+        .content-section:hover {
+            box-shadow: 0 4px 12px rgba(252, 207, 0, 0.12);
+            border-color: var(--flobi-gold);
+        }
+
+        .content-section h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-16);
+            color: var(--flobi-navy);
+            border-left: 4px solid var(--flobi-gold);
+            padding-left: var(--space-12);
+        }
+
+        .content-section h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+            color: var(--color-text-dark);
+        }
+
+        .content-section p {
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: var(--space-12);
+            font-size: var(--font-size-base);
+        }
+
+        .content-section ul {
+            list-style: none;
+            margin-top: var(--space-16);
+        }
+
+        .content-section li {
+            padding: var(--space-8) 0;
+            color: var(--color-text-medium);
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-8);
+            font-size: var(--font-size-base);
+        }
+
+        .content-section li:before {
+            content: "•";
+            color: var(--flobi-gold);
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .checkmark-list li:before {
+            content: "✓";
+            color: var(--flobi-gold);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Service Slides */
+        .service-content {
+            display: grid;
+            gap: var(--space-32);
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Industries Grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-24);
+            margin-top: var(--space-24);
+        }
+
+        .industry-card {
+            background: var(--color-surface-light);
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            border-top: 4px solid var(--flobi-gold);
+            transition: all 0.3s var(--ease-standard);
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(252, 207, 0, 0.15);
+            border-top-color: var(--flobi-sky-blue);
+        }
+
+        .industry-card h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-12);
+            color: var(--flobi-navy);
+        }
+
+        .industry-card p {
+            font-size: var(--font-size-base);
+            color: var(--color-text-medium);
+            line-height: 1.6;
+        }
+
+        /* Trust Indicators */
+        .trust-list {
+            list-style: none;
+            margin-top: var(--space-24);
+        }
+
+        .trust-list li {
+            padding: var(--space-16);
+            background: var(--color-surface-light);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-12);
+            border: 1px solid var(--color-border-light);
+            border-left: 4px solid var(--flobi-gold);
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+            transition: all 0.3s var(--ease-standard);
+            color: var(--color-text-medium);
+            font-size: var(--font-size-base);
+        }
+        
+        .trust-list li:hover {
+            transform: translateX(8px);
+            box-shadow: 0 2px 8px rgba(252, 207, 0, 0.1);
+        }
+
+        .trust-list li:before {
+            content: "✓";
+            color: var(--flobi-gold);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: var(--space-32);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: var(--space-16);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-surface-light);
+            border: 2px solid var(--flobi-gold);
+            color: var(--flobi-gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s var(--ease-standard);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--flobi-gold);
+            color: var(--flobi-navy);
+            transform: scale(1.1);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .slide-indicators {
+            display: flex;
+            gap: var(--space-8);
+            padding: var(--space-12);
+            background: var(--color-surface-light);
+            border-radius: 24px;
+            border: 1px solid var(--color-border-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-border-light);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-standard);
+        }
+
+        .indicator.active {
+            background: var(--flobi-gold);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* CTA Slide */
+        .cta-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(252, 207, 0, 0.05) 0%, rgba(0, 112, 201, 0.05) 100%);
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: var(--font-weight-bold);
+            color: var(--flobi-navy);
+            margin-bottom: var(--space-32);
+        }
+
+        .cta-contacts {
+            display: grid;
+            gap: var(--space-20);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cta-contact-item {
+            background: var(--color-surface-light);
+            padding: var(--space-20);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            display: flex;
+            align-items: center;
+            gap: var(--space-16);
+            font-size: var(--font-size-lg);
+            transition: all 0.3s var(--ease-standard);
+            color: var(--color-text-dark);
+        }
+        
+        .cta-contact-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(252, 207, 0, 0.15);
+            border-left-color: var(--flobi-sky-blue);
+        }
+
+        .cta-contact-icon {
+            font-size: 28px;
+        }
+
+        .cta-contact-item strong {
+            color: var(--color-text-dark);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .cta-contact-item div {
+            text-align: left;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: var(--space-16);
+            }
+
+            .company-name {
+                font-size: 28px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .slide-header h2 {
+                font-size: 24px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .nav-controls {
+                bottom: var(--space-16);
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-item {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Service specific colors */
+        .bg-gold { 
+            background: var(--flobi-gold);
+            color: var(--flobi-navy);
+        }
+        
+        .bg-navy { 
+            background: var(--flobi-navy);
+            color: white;
+        }
+        
+        .bg-sky { 
+            background: var(--flobi-sky-blue);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container" id="portfolio">
+        <!-- Slide 1: Company Info -->
+        <div class="slide slide-1 active" data-slide="1">
+            <img src="logo00.png" alt="FLOBI TECH INDIA Logo" class="logo">
+            <h1 class="company-name">FLOBI TECH INDIA</h1>
+            <p class="tagline">Innovative Data &amp; Cloud Solutions for Modern Enterprises</p>
+            <p class="description">At Flobi, we deliver end-to-end IT and data solutions designed to empower businesses with clarity, efficiency, and innovation. From data engineering and analytics to cloud strategy, automation, and digital transformation, our team helps organizations turn complex challenges into scalable solutions. We combine deep technical expertise with a commitment to measurable impact — ensuring every service we deliver drives smarter decisions and sustainable growth.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 9307917374</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>info@flobi.in</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span>flobi.in</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Pune, Maharashtra, India</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Mission, Vision & Why Choose Us -->
+        <div class="slide" data-slide="2">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-gold">
+                <h2>Our Vision &amp; Mission</h2>
+            </div>
+            <div class="content-grid two-col">
+                <div class="content-section">
+                    <h3>Mission Statement</h3>
+                    <p>Empower progress by unlocking insights from continuous data flow, accelerating business transformation.</p>
+                </div>
+                <div class="content-section">
+                    <h3>Vision Statement</h3>
+                    <p>To shape a future where every business thrives through intelligent, seamless, and sustainable digital transformation.</p>
+                </div>
+                <div class="content-section">
+                    <h3>What We Do</h3>
+                    <ul>
+                        <li>Cloud Platform Management</li>
+                        <li>Data Engineering Solutions</li>
+                        <li>DevOps &amp; Automation</li>
+                        <li>AI &amp; MLOps</li>
+                        <li>Gen AI / Agentic AI Solutions</li>
+                        <li>Business and Data Intelligence</li>
+                        <li>Data / AI / Cloud Consulting &amp; Support</li>
+                        <li>Web Development &amp; UI/UX Designing</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Why Choose FLOBI TECH INDIA</h3>
+                    <ul class="checkmark-list">
+                        <li><strong>12+ Years of Expertise</strong> - Deep technical knowledge in Cloud, Data Engineering, DevOps, AI &amp; MLOps</li>
+                        <li><strong>Multi-Cloud Certified</strong> - AWS, GCP, Azure certified specialists with proven implementations</li>
+                        <li><strong>End-to-End Solutions</strong> - From strategy consultation to execution with 24/7 technical support</li>
+                        <li><strong>Results-Driven Approach</strong> - Measurable impact on business metrics, scalability, and ROI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Cloud Platform Management -->
+        <div class="slide" data-slide="3">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-navy">
+                <h2>☁️ Cloud Platform Management</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Multi-cloud strategy and architecture design for seamless migration and optimization</li>
+                        <li>Infrastructure provisioning and management with automated scaling, security, and cost optimization</li>
+                        <li>Cloud cost optimization to reduce unnecessary spending while maintaining performance</li>
+                        <li>Security and compliance implementation across all cloud platforms</li>
+                        <li>24/7 monitoring and support to ensure your applications run flawlessly</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Reduced infrastructure costs by up to 40%</li>
+                        <li>99.9%+ uptime with automated failover</li>
+                        <li>Enterprise-grade security and compliance</li>
+                        <li>Scalable infrastructure that grows with your business</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Data Engineering Solutions -->
+        <div class="slide" data-slide="4">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-gold">
+                <h2>🗄️ Data Engineering Solutions</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Data pipeline architecture and development using Databricks, Snowflake, and cloud-native tools</li>
+                        <li>ETL/ELT processes optimized for high-volume data ingestion, transformation, and loading</li>
+                        <li>Data warehouse design and implementation on AWS (Redshift), GCP (BigQuery), or Azure (Synapse)</li>
+                        <li>Real-time data streaming solutions for immediate insights and responsive systems</li>
+                        <li>Data quality and governance frameworks to ensure data accuracy, security, and compliance</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Process millions of records per second</li>
+                        <li>Unified data infrastructure across on-premises and cloud</li>
+                        <li>Reduced time-to-insight from weeks to minutes</li>
+                        <li>Scalable, maintainable data platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: DevOps & Automation -->
+        <div class="slide" data-slide="5">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-sky">
+                <h2>⚙️ DevOps &amp; Automation</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>CI/CD pipeline design and implementation using Jenkins, GitLab CI, GitHub Actions</li>
+                        <li>Infrastructure as Code (IaC) using Terraform and CloudFormation for reproducible infrastructure</li>
+                        <li>Container orchestration with Docker and Kubernetes for efficient, scalable deployments</li>
+                        <li>Automated testing and quality assurance frameworks to catch issues before production</li>
+                        <li>Monitoring, logging, and alerting systems for complete operational visibility</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Deploy code to production multiple times per day safely</li>
+                        <li>80% reduction in deployment failures</li>
+                        <li>Faster time-to-market for new features</li>
+                        <li>Complete audit trails and compliance readiness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: AI & MLOps -->
+        <div class="slide" data-slide="6">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-navy">
+                <h2>🧠 AI &amp; MLOps</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>ML model development and training using Python, TensorFlow, PyTorch, and scikit-learn</li>
+                        <li>Model deployment and serving infrastructure for real-time predictions and batch processing</li>
+                        <li>Model monitoring and governance to detect drift, performance degradation, and ensure compliance</li>
+                        <li>Feature engineering and management platforms for production-ready ML features</li>
+                        <li>AutoML and experiment tracking solutions to accelerate model development cycles</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Models deployed 10x faster</li>
+                        <li>Reduced model maintenance overhead</li>
+                        <li>Enterprise governance and explainability</li>
+                        <li>Continuous model improvement and optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Gen AI / Agentic AI Solutions -->
+        <div class="slide" data-slide="7">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-gold">
+                <h2>✨ Gen AI / Agentic AI Solutions</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Large Language Model (LLM) integration - GPT, Claude, Gemini, and open-source models</li>
+                        <li>Agentic AI systems that autonomously perform complex tasks with human-in-the-loop oversight</li>
+                        <li>Retrieval-Augmented Generation (RAG) solutions for accurate, contextual AI responses</li>
+                        <li>Prompt engineering and fine-tuning to optimize AI models for your specific use cases</li>
+                        <li>AI ethics and responsible AI frameworks ensuring transparency and bias mitigation</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Automate knowledge work with 80%+ efficiency gains</li>
+                        <li>Reduce operational costs through intelligent automation</li>
+                        <li>Enhance customer experiences with conversational AI</li>
+                        <li>Stay ahead of the AI revolution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Business and Data Intelligence -->
+        <div class="slide" data-slide="8">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-sky">
+                <h2>📊 Business and Data Intelligence</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>BI platform implementation using Power BI, Tableau, Looker, and Apache Superset</li>
+                        <li>Custom dashboards and reporting that provide real-time insights into business KPIs</li>
+                        <li>Advanced analytics including predictive modeling, cohort analysis, and anomaly detection</li>
+                        <li>Self-service analytics enabling business users to explore data independently</li>
+                        <li>Data visualization best practices to communicate insights clearly and drive decision-making</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Data-driven decision making across the organization</li>
+                        <li>Reduced reporting time from days to minutes</li>
+                        <li>Better visibility into business performance</li>
+                        <li>Empowered teams with self-service analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Data/AI/Cloud Consulting & Support -->
+        <div class="slide" data-slide="9">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-navy">
+                <h2>🎧 Data / AI / Cloud Consulting &amp; Support</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Cloud transformation consulting helping you plan and execute migration strategies</li>
+                        <li>AI/ML readiness assessments evaluating organizational capability and creating roadmaps</li>
+                        <li>Technology stack recommendations based on your business requirements and growth trajectory</li>
+                        <li>Dedicated technical support with SLAs ensuring 24/7 availability when you need us</li>
+                        <li>Training and knowledge transfer to upskill your teams and ensure long-term success</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>Reduce technology risks with expert guidance</li>
+                        <li>Faster ROI on technology investments</li>
+                        <li>Continuous optimization and improvement</li>
+                        <li>Hands-on support when critical issues arise</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Web Development & UI/UX -->
+        <div class="slide" data-slide="10">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-gold">
+                <h2>🎨 Web Development &amp; UI/UX Designing</h2>
+            </div>
+            <div class="service-content">
+                <div class="content-section">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Modern web application development using React, Vue, Angular, and Node.js</li>
+                        <li>UI/UX design focusing on user research, wireframing, prototyping, and iterative design</li>
+                        <li>Responsive design ensuring seamless experiences across all devices and screen sizes</li>
+                        <li>Performance optimization for lightning-fast load times and smooth interactions</li>
+                        <li>API integration and backend services connecting your frontend to robust cloud infrastructure</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h3>Key Benefits</h3>
+                    <ul class="checkmark-list">
+                        <li>User-centric design that increases engagement</li>
+                        <li>Fast, responsive applications</li>
+                        <li>Scalable architecture for growth</li>
+                        <li>Modern tech stack for maintainability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Industries We Serve -->
+        <div class="slide" data-slide="11">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-navy">
+                <h2>Industries We Serve</h2>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <h4>💰 Finance &amp; BFSI</h4>
+                    <p>Payment systems, risk analytics, compliance automation</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🏥 Healthcare</h4>
+                    <p>Patient data analytics, HIPAA compliance, predictive health insights</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🛒 E-commerce &amp; Retail</h4>
+                    <p>Real-time analytics, personalization, demand forecasting</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🏭 Manufacturing</h4>
+                    <p>IoT data pipelines, predictive maintenance, supply chain optimization</p>
+                </div>
+                <div class="industry-card">
+                    <h4>💻 SaaS &amp; Technology</h4>
+                    <p>Scalable infrastructure, performance optimization, multi-tenant architectures</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🚀 Startups</h4>
+                    <p>MVP development, rapid scaling, cost-effective cloud solutions</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🏢 Enterprise</h4>
+                    <p>Legacy modernization, digital transformation, enterprise-scale solutions</p>
+                </div>
+                <div class="industry-card">
+                    <h4>🛡️ Insurance</h4>
+                    <p>Claims analytics, fraud detection, customer intelligence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Trusted Worldwide -->
+        <div class="slide" data-slide="12">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-gold">
+                <h2>Trusted Worldwide</h2>
+            </div>
+            <ul class="trust-list">
+                <li>Served 50+ organizations across startups, mid-market, and enterprises</li>
+                <li>Multi-continent presence with clients in India, US, Europe, and APAC regions</li>
+                <li>Industry recognition through certifications and partnerships with cloud providers</li>
+                <li>99.9% client satisfaction rate based on ongoing support and successful implementations</li>
+                <li>Consistent delivery on complex, mission-critical projects with measurable business impact</li>
+            </ul>
+        </div>
+
+        <!-- Slide 13: Our Team & Expertise -->
+        <div class="slide" data-slide="13">
+            <img src="logo00.png" alt="FLOBI Logo" class="logo-small">
+            <div class="slide-header bg-sky">
+                <h2>Our Team &amp; Expertise</h2>
+            </div>
+            <div class="content-grid two-col">
+                <div class="content-section">
+                    <h3>Leadership &amp; Team</h3>
+                    <p><strong>Leadership with 12+ years expertise</strong> in Cloud, Data Engineering, DevOps, AI &amp; MLOps</p>
+                    <p style="margin-top: 16px;">Our team consists of skilled developers &amp; engineers who are passionate about delivering excellence and driving innovation.</p>
+                </div>
+                <div class="content-section">
+                    <h3>Certifications</h3>
+                    <ul class="checkmark-list">
+                        <li>AWS Certified Solutions Architect &amp; Developer</li>
+                        <li>GCP Certified Cloud Architect &amp; Data Engineer</li>
+                        <li>Azure Certified Solutions Expert</li>
+                        <li>Kubernetes Certified Application Developer</li>
+                        <li>GitOps and Infrastructure-as-Code Specialists</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Call to Action -->
+        <div class="slide cta-slide" data-slide="14">
+            <img src="logo00.png" alt="FLOBI TECH INDIA Logo" class="logo">
+            <h2 class="cta-title">Let's Work Together</h2>
+            <div class="cta-contacts">
+                <div class="cta-contact-item" style="border-left: 4px solid var(--flobi-gold);">
+                    <span class="cta-contact-icon">📞</span>
+                    <div>
+                        <div><strong>Phone</strong></div>
+                        <div>+91 9307917374</div>
+                    </div>
+                </div>
+                <div class="cta-contact-item" style="border-left: 4px solid var(--flobi-gold);">
+                    <span class="cta-contact-icon">📧</span>
+                    <div>
+                        <div><strong>Email</strong></div>
+                        <div>info@flobi.in</div>
+                    </div>
+                </div>
+                <div class="cta-contact-item" style="border-left: 4px solid var(--flobi-gold);">
+                    <span class="cta-contact-icon">🌐</span>
+                    <div>
+                        <div><strong>Website</strong></div>
+                        <div>flobi.in</div>
+                    </div>
+                </div>
+                <div class="cta-contact-item" style="border-left: 4px solid var(--flobi-gold);">
+                    <span class="cta-contact-icon">📍</span>
+                    <div>
+                        <div><strong>Location</strong></div>
+                        <div>Pune, Maharashtra, India</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled="">❮</button>
+        <div class="slide-indicators" id="indicators"><div class="indicator active"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div><div class="indicator"></div></div>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 14;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+                if (parseInt(slide.dataset.slide) === currentSlide) {
+                    slide.classList.add('active');
+                } else if (parseInt(slide.dataset.slide) < currentSlide) {
+                    slide.classList.add('prev');
+                }
+            });
+            
+            updateIndicators();
+            updateNavButtons();
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        function updateIndicators() {
+            const container = document.getElementById('indicators');
+            container.innerHTML = '';
+            
+            for (let i = 1; i <= totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'indicator' + (i === currentSlide ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                container.appendChild(dot);
+            }
+        }
+
+        function updateNavButtons() {
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+
+</body></html>
